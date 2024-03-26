@@ -14,8 +14,7 @@ from groq import Groq
 
 import os
 import openai
-#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
-#os.environ['OPENAI_API_KEY'] = "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" #sample
+
 
 
 load_dotenv()
@@ -88,7 +87,7 @@ def get_response(user_query: str, db: SQLDatabase, chat_history: list):
     prompt = ChatPromptTemplate.from_template(template) 
 
     #llm = ChatOpenAI()
-    llm = ChatGroq(temperature=0,model_name="mixtral-8x7b-32768") # groq_api_key="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",
+    llm = ChatGroq(temperature=0,model_name="mixtral-8x7b-32768") 
 
     chain = (
         RunnablePassthrough.assign(query=sql_chain).assign(
