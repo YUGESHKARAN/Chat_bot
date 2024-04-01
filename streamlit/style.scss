@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+   // background-color: blue !important;
+    //z-index: 1;
+}
+
+
+.col{
+    padding: 1%;
+    flex-basis: 33%;
+    //width: 33%;
+    border: 2px solid black;
+   // color:#30336b;
+    //background-color:#95afc0 ;
+    text-align: center;
+    height: 20vh;
+    
+  
+  
+    
+}
+.col.one{
+    background-image: url("img.jpeg");
+}
+.cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
