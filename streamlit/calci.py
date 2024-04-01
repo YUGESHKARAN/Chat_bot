@@ -1,9 +1,12 @@
 import streamlit as st
 
 
-st.title("WELCOME TO STREAMLIT CALCULATOR 🤗")
+st.title("Hello Users 🖐️")
 
-
+with st.container():
+    st.markdown("""
+                <marquee style="border-top:2px solid black; border-bottom:2px solid black; color:#1B1464;" direction='left' bgcolor='#12CBC4' >🤗WELCOME TO STREAMLIT CALCULATOR 🤗</marquee>""",
+    unsafe_allow_html=True)
 col1,_,col2=st.columns([5,5,19],gap="small")
 
 #with col1:
@@ -58,4 +61,7 @@ with col2:
             
         st.session_state.cal.append({"role":"assistant","content":response})   
                     
-    
+with st.container():
+    st.markdown("""
+                <marquee style="border-top:2px solid black; border-bottom:2px solid black; color:#1B1464;" direction='left' bgcolor='#12CBC4' >NOTE: You can view your results history in the sidebar section </marquee>""",
+    unsafe_allow_html=True)
