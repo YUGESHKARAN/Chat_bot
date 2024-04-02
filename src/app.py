@@ -55,8 +55,8 @@ def get_sql_chain(db):
     
     prompt = ChatPromptTemplate.from_template(template)       
 
-    #llm = ChatOpenAI()
-    llm = ChatGroq(temperature=0,model_name="mixtral-8x7b-32768") 
+    llm = ChatOpenAI()
+    #llm = ChatGroq(temperature=0,model_name="mixtral-8x7b-32768") 
 
     def get_schema(_):
         return db.get_table_info()
@@ -86,8 +86,8 @@ def get_response(user_query: str, db: SQLDatabase, chat_history: list):
 
     prompt = ChatPromptTemplate.from_template(template) 
 
-    #llm = ChatOpenAI()
-    llm = ChatGroq(temperature=0,model_name="mixtral-8x7b-32768") 
+    llm = ChatOpenAI()
+    #llm = ChatGroq(temperature=0,model_name="mixtral-8x7b-32768") 
 
     chain = (
         RunnablePassthrough.assign(query=sql_chain).assign(
@@ -126,8 +126,8 @@ with st.sidebar:
     st.text_input("Host", value="localhost", key="Host")
     st.text_input("Port",value="3306", key="Port")
     st.text_input("User",value="root", key="User")
-    st.text_input("Password",type="password",value="admin", key="Password")
-    st.text_input("Database", value="goschemes", key="Database")
+    st.text_input("Password",type="password",value="root", key="Password")
+    st.text_input("Database", value="government", key="Database")
 
     if st.button("Connect"):
         with st.spinner("Connecting to database..."):
